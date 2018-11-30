@@ -7,8 +7,15 @@
     tools:context=".RideConfirmationActivity">
 
     <RelativeLayout
+        android:id="@+id/pencil1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp">
 
         <TextView
             android:id="@+id/textView5"
@@ -20,6 +27,419 @@
             android:layout_marginTop="28dp"
             android:text="Your Rides, Buddy!"
             android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="98dp" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/editActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="121dp"
+            android:clickable="true"
+            android:src="@android:drawable/ic_menu_edit" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/editActionButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/editActionButton"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="174dp"
+            android:clickable="true"
+            android:src="@android:drawable/ic_menu_edit"
+            android:layout_alignLeft="@+id/editActionButton"
+            android:layout_marginLeft="0dp" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/editActionButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/editActionButton"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="232dp"
+            android:clickable="true"
+            android:src="@android:drawable/ic_menu_edit"
+            android:layout_alignLeft="@+id/editActionButton"
+            android:layout_marginLeft="0dp" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/editActionButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/editActionButton"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="178dp"
+            android:clickable="true"
+            android:src="@android:drawable/ic_menu_edit"
+            android:layout_alignLeft="@+id/editActionButton"
+            android:layout_marginLeft="0dp" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/editActionButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/editActionButton"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-2dp"
+            android:layout_marginBottom="122dp"
+            android:clickable="true"
+            android:src="@android:drawable/ic_menu_edit"
+            android:layout_alignLeft="@+id/editActionButton"
+            android:layout_marginLeft="-2dp" />
+
+        <TextView
+            android:id="@+id/dateViewStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="84dp"
+            android:layout_marginLeft="84dp"
+            android:layout_marginTop="86dp"
+            android:text="Date"
+            android:textColor="@color/design_default_color_primary_dark"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/originViewStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/dateViewStatus"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="160dp"
+            android:layout_marginLeft="160dp"
+            android:layout_marginBottom="-1dp"
+            android:text="From"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/destinationViewStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/dateViewStatus"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="108dp"
+            android:layout_marginRight="108dp"
+            android:layout_marginBottom="-2dp"
+            android:text="To"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/statusViewStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/dateViewStatus"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginRight="19dp"
+            android:text="Status"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dateView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="135dp"
+            android:layout_toEndOf="@+id/editActionButton2"
+            android:textColor="@color/common_google_signin_btn_text_light_disabled"
+            android:textStyle="italic"
+            tools:text="Ride 1 Date"
+            android:layout_marginLeft="0dp"
+            android:layout_toRightOf="@+id/editActionButton2" />
+
+        <TextView
+            android:id="@+id/dateView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/dateView1"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="187dp"
+            android:layout_marginEnd="0dp"
+            android:text="TextView"
+            android:textColor="@color/common_google_signin_btn_text_light_disabled"
+            android:textStyle="italic"
+            tools:text="Ride 2 Date"
+            android:layout_alignRight="@+id/dateView1"
+            android:layout_marginRight="0dp" />
+
+        <TextView
+            android:id="@+id/dateView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/dateView1"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="0dp"
+            android:text="TextView"
+            android:textColor="@color/common_google_signin_btn_text_light_disabled"
+            android:textStyle="italic"
+            tools:text="Ride 3 Date"
+            android:layout_alignRight="@+id/dateView1"
+            android:layout_marginRight="0dp" />
+
+        <TextView
+            android:id="@+id/dateView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/dateView2"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="190dp"
+            android:text="TextView"
+            android:textColor="@color/common_google_signin_btn_text_light_disabled"
+            android:textStyle="italic"
+            tools:text="Ride 4 Date"
+            android:layout_alignLeft="@+id/dateView2"
+            android:layout_marginLeft="0dp" />
+
+        <TextView
+            android:id="@+id/dateView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/dateView1"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="136dp"
+            android:text="TextView"
+            android:textColor="@color/common_google_signin_btn_text_light_disabled"
+            android:textStyle="italic"
+            tools:text="Ride 5 Date"
+            android:layout_alignRight="@+id/dateView1"
+            android:layout_marginRight="0dp" />
+
+        <TextView
+            android:id="@+id/fromView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/originViewStatus"
+            android:layout_alignTop="@+id/dateView1"
+            android:layout_marginTop="0dp"
+            android:text="TextView"
+            android:textColor="@color/common_google_signin_btn_text_light_disabled"
+            android:textStyle="italic"
+            tools:text="From 1"
+            android:layout_alignLeft="@+id/originViewStatus" />
+
+        <TextView
+            android:id="@+id/fromView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/originViewStatus"
+            android:layout_alignTop="@+id/dateView2"
+            android:layout_marginTop="0dp"
+            android:text="TextView"
+            android:textColor="@color/common_google_signin_btn_text_light_disabled"
+            android:textStyle="italic"
+            tools:text="From 2"
+            android:layout_alignLeft="@+id/originViewStatus" />
+
+        <TextView
+            android:id="@+id/fromView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/dateView3"
+            android:layout_alignEnd="@+id/fromView1"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="1dp"
+            android:text="TextView"
+            android:textColor="@color/common_google_signin_btn_text_light_disabled"
+            android:textStyle="italic"
+            tools:text="From 3"
+            android:layout_alignRight="@+id/fromView1"
+            android:layout_marginRight="1dp" />
+
+        <TextView
+            android:id="@+id/fromView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/originViewStatus"
+            android:layout_alignTop="@+id/dateView4"
+            android:layout_marginTop="0dp"
+            android:text="TextView"
+            android:textColor="@color/common_google_signin_btn_text_light_disabled"
+            android:textStyle="italic"
+            tools:text="From 4"
+            android:layout_alignLeft="@+id/originViewStatus" />
+
+        <TextView
+            android:id="@+id/toView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/dateView1"
+            android:layout_alignEnd="@+id/textView5"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="23dp"
+            android:text="TextView"
+            android:textColor="@color/common_google_signin_btn_text_light_disabled"
+            android:textStyle="italic"
+            tools:text="To 1"
+            android:layout_alignRight="@+id/textView5"
+            android:layout_marginRight="23dp" />
+
+        <TextView
+            android:id="@+id/statusView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/dateView1"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="0dp"
+            android:text="TextView"
+            android:textColor="@color/common_google_signin_btn_text_light_disabled"
+            android:textStyle="italic"
+            tools:text="Status 1"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="14dp" />
+
+        <TextView
+            android:id="@+id/toView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/toView1"
+            android:layout_alignTop="@+id/dateView2"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:text="TextView"
+            android:textColor="@color/common_google_signin_btn_text_light_disabled"
+            android:textStyle="italic"
+            tools:text="To 2"
+            android:layout_alignLeft="@+id/toView1"
+            android:layout_marginLeft="0dp" />
+
+        <TextView
+            android:id="@+id/statusView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/statusView1"
+            android:layout_alignBottom="@+id/dateView2"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="0dp"
+            android:text="TextView"
+            android:textColor="@color/common_google_signin_btn_text_light_disabled"
+            android:textStyle="italic"
+            tools:text="Status 2"
+            android:layout_alignLeft="@+id/statusView1"
+            android:layout_marginLeft="0dp" />
+
+        <TextView
+            android:id="@+id/toView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/textView5"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="23dp"
+            android:text="TextView"
+            android:textColor="@color/common_google_signin_btn_text_light_disabled"
+            android:textStyle="italic"
+            tools:text="To 3"
+            android:layout_alignRight="@+id/textView5"
+            android:layout_marginRight="23dp" />
+
+        <TextView
+            android:id="@+id/statusView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/statusView1"
+            android:layout_alignBottom="@+id/dateView3"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="0dp"
+            android:text="TextView"
+            android:textColor="@color/common_google_signin_btn_text_light_disabled"
+            android:textStyle="italic"
+            tools:text="Status 3"
+            android:layout_alignLeft="@+id/statusView1"
+            android:layout_marginLeft="0dp" />
+
+        <TextView
+            android:id="@+id/toView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/toView1"
+            android:layout_alignTop="@+id/dateView4"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:text="TextView"
+            android:textColor="@color/common_google_signin_btn_text_light_disabled"
+            android:textStyle="italic"
+            tools:text="To 4"
+            android:layout_alignLeft="@+id/toView1"
+            android:layout_marginLeft="0dp" />
+
+        <TextView
+            android:id="@+id/statusView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/statusView1"
+            android:layout_alignTop="@+id/dateView4"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:text="TextView"
+            android:textColor="@color/common_google_signin_btn_text_light_disabled"
+            android:textStyle="italic"
+            tools:text="Status 4"
+            android:layout_alignLeft="@+id/statusView1"
+            android:layout_marginLeft="0dp" />
+
+        <TextView
+            android:id="@+id/fromView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/originViewStatus"
+            android:layout_alignTop="@+id/dateView5"
+            android:layout_marginTop="0dp"
+            android:text="TextView"
+            android:textColor="@color/common_google_signin_btn_text_light_disabled"
+            android:textStyle="italic"
+            tools:text="From 5"
+            android:layout_alignLeft="@+id/originViewStatus" />
+
+        <TextView
+            android:id="@+id/toView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/toView1"
+            android:layout_alignTop="@+id/dateView5"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:text="TextView"
+            android:textColor="@color/common_google_signin_btn_text_light_disabled"
+            android:textStyle="italic"
+            tools:text="To 5"
+            android:layout_alignLeft="@+id/toView1"
+            android:layout_marginLeft="0dp" />
+
+        <TextView
+            android:id="@+id/statusView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/statusView1"
+            android:layout_alignTop="@+id/dateView5"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:text="TextView"
+            android:textColor="@color/common_google_signin_btn_text_light_disabled"
+            android:textStyle="italic"
+            tools:text="Status 5"
+            android:layout_alignLeft="@+id/statusView1"
+            android:layout_marginLeft="0dp" />
+
     </RelativeLayout>
 </RelativeLayout>
