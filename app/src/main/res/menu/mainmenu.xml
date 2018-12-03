@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Home" />
-    <item android:title="New Ride" />
-    <item android:title="Check Status" />
-    <item android:title="Signout" />
+    <item
+        android:id="@+id/menuitemhome"
+        android:title="Home" />
+    <item
+        android:id="@+id/menuitemnewride"
+        android:title="New Ride" />
+    <item
+        android:id="@+id/menuitemcheckstatus"
+        android:title="Check Status" />
+    <item
+        android:id="@+id/menuitemlogout"
+        android:title="Signout" />
 </menu>
