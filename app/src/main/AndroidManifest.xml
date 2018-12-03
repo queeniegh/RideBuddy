@@ -20,7 +20,8 @@
         <activity android:name=".LandingPageActivity" />
         <activity android:name=".CreateProfileActivity" />
         <activity android:name=".RideConfirmationActivity" />
-        <activity android:name=".RideStatusActivity"></activity>
+        <activity android:name=".RideStatusActivity" />
+        <activity android:name=".RideRequest"></activity>
     </application>
 
 </manifest>
