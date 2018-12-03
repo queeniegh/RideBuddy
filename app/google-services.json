@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "582461421101",
+    "firebase_url": "https://ridebuddy-51ea3.firebaseio.com",
+    "project_id": "ridebuddy-51ea3",
+    "storage_bucket": "ridebuddy-51ea3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582461421101:android:9d76385cab0771c4",
+        "android_client_info": {
+          "package_name": "com.example.queenie.ridebuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "582461421101-h1abd75mn1b2ngur1hso7t59d1hnbk5g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.queenie.ridebuddy",
+            "certificate_hash": "cb065844663def5b178c8977e3ef8281895cec1a"
+          }
+        },
+        {
+          "client_id": "582461421101-mcig5nv8orb60b2qipe9h7as6mok9k72.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHlseVLlpAxHpYZFoWbkISVUZbb4bE7r0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "582461421101-mcig5nv8orb60b2qipe9h7as6mok9k72.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
