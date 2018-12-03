@@ -15,31 +15,33 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class LoginActivity extends Activity implements View.OnClickListener {
+class LoginActivity extends Activity implements View.OnClickListener {
 
-    Button buttonRegister, buttonLogin;
+    Button buttonCreate, buttonLogin, buttonForgot;
     EditText editTextEmail, editTextPassword;
     private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_main);
 
-        buttonRegister = findViewById(R.id.buttonRegister);
+        buttonCreate = findViewById(R.id.buttonCreate);
         buttonLogin = findViewById(R.id.buttonLogin);
+        buttonForgot = findViewById(R.id.buttonForgot);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
 
         buttonLogin.setOnClickListener(this);
-        buttonRegister.setOnClickListener(this);
+        buttonCreate.setOnClickListener(this);
+        buttonForgot.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
     }
 
     @Override
     public void onClick(View v) {
-        if (v == buttonRegister) {
+        if (v == buttonCreate) {
             mAuth.createUserWithEmailAndPassword(editTextEmail.getText().toString(), editTextPassword.getText().toString())
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
@@ -67,7 +69,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                                 // Sign in success, update UI with the signed-in user's information
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                Intent intentProfile = new Intent(LoginActivity.this, LandingActivity.class);
+                                Intent intentProfile = new Intent(LoginActivity.this, LandingPageActivity.class);
                                 startActivity(intentProfile);
                             } else {
                                 // If sign in fails, display a message to the user.
