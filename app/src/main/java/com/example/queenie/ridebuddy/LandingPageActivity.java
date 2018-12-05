@@ -41,10 +41,9 @@ public class LandingPageActivity extends Activity implements View.OnClickListene
 
 
         } else if (v == buttonStatus){
-           // Intent intentStatus = new Intent(this,RideStatusActivity.class );
-           // startActivity(intentStatus);
-
-            Toast.makeText(this, "test", Toast.LENGTH_SHORT).show();
+            Intent intentStatus = new Intent(this,RideStatusActivity.class );
+           startActivity(intentStatus);
+           
 
         }
 

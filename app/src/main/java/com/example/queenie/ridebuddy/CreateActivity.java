@@ -40,8 +40,8 @@ public class CreateActivity extends Activity implements View.OnClickListener {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Toast.makeText(CreateActivity.this, "Registration Successful - Welcome!", Toast.LENGTH_SHORT).show();
-                            Intent intentHome = new Intent(CreateActivity.this,LandingPageActivity.class) ;
-                            startActivity(intentHome);
+                            //Intent intentHome = new Intent(CreateActivity.this,LandingPageActivity.class) ;
+                            //startActivity(intentHome);
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(CreateActivity.this, "Registration Failed - Try Again", Toast.LENGTH_SHORT).show();
