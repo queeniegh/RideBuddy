@@ -17,8 +17,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="165dp"
         android:ems="10"
-        android:inputType="textEmailAddress"
-        tools:text="Email Address" />
+        android:hint="Email Address"
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -29,8 +29,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="256dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        tools:text="Password" />
+        android:hint="Password"
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/buttonLogin"

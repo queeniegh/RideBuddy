@@ -42,22 +42,10 @@ class LoginActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v == buttonCreate) {
-            mAuth.createUserWithEmailAndPassword(editTextEmail.getText().toString(), editTextPassword.getText().toString())
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                // Sign in success, update UI with the signed-in user's information
-                                Toast.makeText(LoginActivity.this, "Registration Successful - Welcome!", Toast.LENGTH_SHORT).show();
-                                //Intent intentHome = new Intent(MainActivity.this,HomeActivity.class) ;
-                                //startActivity(intentHome);
-                            } else {
-                                // If sign in fails, display a message to the user.
-                                Toast.makeText(LoginActivity.this, "Registration Failed - Try Again", Toast.LENGTH_SHORT).show();
-                            }
-                            //...
-                        }
-                    });
+
+            Intent intentEdit = new Intent(this, CreateActivity.class);
+            startActivity(intentEdit);
+
         } else if (v == buttonLogin)
 
         {
