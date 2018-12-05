@@ -43,7 +43,7 @@ public class LandingPageActivity extends Activity implements View.OnClickListene
         } else if (v == buttonStatus){
             Intent intentStatus = new Intent(this,RideStatusActivity.class );
            startActivity(intentStatus);
-           
+
 
         }
 
