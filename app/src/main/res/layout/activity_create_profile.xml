@@ -27,53 +27,54 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="106dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:hint="Name"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/editTextEmailTwo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/editTextName"
+        android:layout_alignLeft="@+id/editTextName"
         android:layout_alignParentTop="true"
         android:layout_marginTop="170dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="E-Mail"
-        android:layout_alignLeft="@+id/editTextName" />
+        android:hint="Email"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/editTextPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Phone Number" />
+        android:hint="Phone Number"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/editTextPW"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/editTextName"
+        android:layout_alignLeft="@+id/editTextName"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="170dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Password"
-        android:layout_alignLeft="@+id/editTextName" />
+        android:hint="Password"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/editTextConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/editTextName"
+        android:layout_alignLeft="@+id/editTextName"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="101dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Confirm Password"
-        android:layout_alignLeft="@+id/editTextName" />
+        android:hint="Confirm Password"
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/buttonCreateTwo"

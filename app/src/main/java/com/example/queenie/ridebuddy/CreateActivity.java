@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -30,6 +31,7 @@ public class CreateActivity extends Activity implements View.OnClickListener {
         mAuth = FirebaseAuth.getInstance();
     }
 
+
     @Override
     public void onClick(View v) {
 
@@ -40,8 +42,8 @@ public class CreateActivity extends Activity implements View.OnClickListener {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Toast.makeText(CreateActivity.this, "Registration Successful - Welcome!", Toast.LENGTH_SHORT).show();
-                            //Intent intentHome = new Intent(CreateActivity.this,LandingPageActivity.class) ;
-                            //startActivity(intentHome);
+                            Intent intentHome = new Intent(CreateActivity.this,LandingPageActivity.class) ;
+                            startActivity(intentHome);
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(CreateActivity.this, "Registration Failed - Try Again", Toast.LENGTH_SHORT).show();

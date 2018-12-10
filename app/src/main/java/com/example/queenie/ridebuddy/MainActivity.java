@@ -15,7 +15,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-class LoginActivity extends Activity implements View.OnClickListener {
+public class MainActivity extends Activity implements View.OnClickListener {
 
     Button buttonCreate, buttonLogin, buttonForgot;
     EditText editTextEmail, editTextPassword;
@@ -43,7 +43,7 @@ class LoginActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         if (v == buttonCreate) {
 
-            Intent intentEdit = new Intent(this, CreateActivity.class);
+            Intent intentEdit = new Intent(MainActivity.this, CreateActivity.class);
             startActivity(intentEdit);
 
         } else if (v == buttonLogin)
@@ -56,12 +56,12 @@ class LoginActivity extends Activity implements View.OnClickListener {
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information
                                 FirebaseUser user = mAuth.getCurrentUser();
-                                Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                Intent intentProfile = new Intent(LoginActivity.this, LandingPageActivity.class);
+                                Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                                Intent intentProfile = new Intent(MainActivity.this, LandingPageActivity.class);
                                 startActivity(intentProfile);
                             } else {
                                 // If sign in fails, display a message to the user.
-                                Toast.makeText(LoginActivity.this, "Access Denied", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Access Denied", Toast.LENGTH_SHORT).show();
                             }
                             // ...
                         }
