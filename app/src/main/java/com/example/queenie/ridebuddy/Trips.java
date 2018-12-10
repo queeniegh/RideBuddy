@@ -7,14 +7,18 @@ public class Trips {
 
     String origin;
     String destination;
-    Date traveldate;
-    Time traveltime;
+    String traveldate;
+    String traveltime1;
+    String traveltime2;
+    String user;
 
-    public Trips(String origin, String destination, Date traveldate, Time traveltime) {
+    public Trips(String origin, String destination, String traveldate, String traveltime1, String traveltime2, String User) {
         this.origin = origin;
         this.destination = destination;
         this.traveldate = traveldate;
-        this.traveltime = traveltime;
+        this.traveltime1 = traveltime1;
+        this.traveltime2 = traveltime2;
+        this.user = user;
     }
 
     public Trips() {
