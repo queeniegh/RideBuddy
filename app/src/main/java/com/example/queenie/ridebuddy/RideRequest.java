@@ -80,7 +80,7 @@ public class RideRequest extends Activity implements View.OnClickListener {
 
             myRef.push().setValue(newTrip);
 
-            Intent intentEdit = new Intent(this, RideConfirmationActivity.class);
+            Intent intentEdit = new Intent(RideRequest.this, RideConfirmationActivity.class);
             startActivity(intentEdit);
         }
     }
