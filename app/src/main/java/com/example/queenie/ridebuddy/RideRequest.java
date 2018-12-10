@@ -14,6 +14,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Date;
+import java.util.Random;
 
 public class RideRequest extends Activity implements View.OnClickListener {
 
@@ -34,6 +35,8 @@ public class RideRequest extends Activity implements View.OnClickListener {
         editTextTimeEnd = findViewById(R.id.editTextTimeEnd);
 
         mAuth = FirebaseAuth.getInstance();
+
+        buttonSubmitRide.setOnClickListener(this);
     }
 
     @Override
@@ -75,13 +78,16 @@ public class RideRequest extends Activity implements View.OnClickListener {
             String createTravelDate = editTextDate.getText().toString();
             String createTravelTime2 = editTextTimeEnd.getText().toString();
             String createEmail = mAuth.getCurrentUser().getEmail();
-
-            Trips newTrip = new Trips(createOrigin, createDestination, createTravelDate, createTravelTime1, createTravelTime2, createEmail);
+            Random r = new Random();
+            int confirmnum = r.nextInt(999999);
+            Trips newTrip = new Trips(createOrigin, createDestination, createTravelDate, createTravelTime1, createTravelTime2, createEmail, confirmnum);
 
             myRef.push().setValue(newTrip);
 
-            Intent intentEdit = new Intent(RideRequest.this, RideConfirmationActivity.class);
-            startActivity(intentEdit);
+
+
+            Intent intentConfirm = new Intent(RideRequest.this, RideConfirmationActivity.class);
+            startActivity(intentConfirm);
         }
     }
 }

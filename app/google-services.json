@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "582461421101-71bl2ok5vf7rtbe14bi55lq1udk2u2dh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.queenie.ridebuddy",
+            "certificate_hash": "3a97d292a69d1b2a174d4db33a5dcb8ccb588ca3"
+          }
+        },
+        {
           "client_id": "582461421101-mcig5nv8orb60b2qipe9h7as6mok9k72.apps.googleusercontent.com",
           "client_type": 3
         }
