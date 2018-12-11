@@ -14,6 +14,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Random;
 
 public class CreateActivity extends Activity implements View.OnClickListener {
 
@@ -59,6 +63,10 @@ public class CreateActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference myRef = database.getReference("Users");
+
         if (v == buttonCreateTwo) {
             mAuth.createUserWithEmailAndPassword(editTextEmailTwo.getText().toString(), editTextPW.getText().toString())
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -67,6 +75,15 @@ public class CreateActivity extends Activity implements View.OnClickListener {
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information
                                 Toast.makeText(CreateActivity.this, "Registration Successful - Welcome!", Toast.LENGTH_SHORT).show();
+
+                                String createName = editTextName.getText().toString();
+                                String createNumber = editTextPhone.getText().toString();
+                                String createEmail = editTextEmailTwo.getText().toString();
+
+                                User newUser = new User(createName, createNumber, createEmail,"");
+
+                                myRef.push().setValue(newUser);
+
                                 Intent intentHome = new Intent(CreateActivity.this, LandingPageActivity.class);
                                 startActivity(intentHome);
                             } else {

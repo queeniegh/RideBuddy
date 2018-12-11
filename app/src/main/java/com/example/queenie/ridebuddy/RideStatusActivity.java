@@ -5,19 +5,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class RideStatusActivity extends Activity {
+public class RideStatusActivity extends Activity implements View.OnClickListener {
 
-    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ride_status);
 
-        mAuth = FirebaseAuth.getInstance();
     }
 
     @Override
@@ -43,5 +42,10 @@ public class RideStatusActivity extends Activity {
             startActivity(intentmenu);
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

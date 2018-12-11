@@ -5,10 +5,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class EditProfileActivity extends Activity {
+
+    EditText editName, editNumber, editBio;
+    TextView editEmail;
     private FirebaseAuth mAuth;
 
     @Override
@@ -16,7 +21,13 @@ public class EditProfileActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
 
+        editBio = findViewById(R.id.editBio);
+        editName = findViewById(R.id.editName);
+        editNumber = findViewById(R.id.editNumber);
+        editEmail = findViewById(R.id.editEmail);
+
         mAuth = FirebaseAuth.getInstance();
+
 
     }
     @Override
