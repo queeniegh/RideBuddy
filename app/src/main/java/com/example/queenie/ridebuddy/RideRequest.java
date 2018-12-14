@@ -121,7 +121,7 @@ public class RideRequest extends Activity implements View.OnClickListener {
             myRef.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    for(DataSnapshot child : dataSnapshot.getChildren()) {
+                    for(final DataSnapshot child : dataSnapshot.getChildren()) {
                         Trips trip = child.getValue(Trips.class);
                         // Find an unconfirmed trip with the same date, start location, end location, and similar start/end time
                         boolean isNotConfirmed = (trip.confirmnum == 0);
@@ -139,6 +139,25 @@ public class RideRequest extends Activity implements View.OnClickListener {
                             trip.traveltime2 = Math.min(trip.traveltime2, newTrip.traveltime2);
                             Random r = new Random();
                             trip.confirmnum = r.nextInt(999999 - 100000) + 100000; // Generate 6 digit confirmnum
+                            child.getRef().setValue(trip);
+                            final DatabaseReference userRef = database.getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                            userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists()) {
+                                        User thisUser = dataSnapshot.getValue(User.class);
+                                        thisUser.currentRide = child.getRef().getKey();
+                                        userRef.setValue(thisUser);
+                                    } else {
+                                        Toast.makeText(RideRequest.this, "User not found", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
                             // Display to both users that the trip was confirmed
                             return; // Ends the loop
                         }
