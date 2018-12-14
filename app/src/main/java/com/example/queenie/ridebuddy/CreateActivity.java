@@ -82,7 +82,7 @@ public class CreateActivity extends Activity implements View.OnClickListener {
 
                                 User newUser = new User(createName, createNumber, createEmail,"");
 
-                                myRef.push().setValue(newUser);
+                                myRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(newUser);
 
                                 Intent intentHome = new Intent(CreateActivity.this, LandingPageActivity.class);
                                 startActivity(intentHome);

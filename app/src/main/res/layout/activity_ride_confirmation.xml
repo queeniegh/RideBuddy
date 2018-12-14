@@ -29,7 +29,7 @@
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/editTextConfirmnum"
+        android:id="@+id/textViewConfirm"
         android:layout_width="119dp"
         android:layout_height="22dp"
         android:layout_alignLeft="@+id/textView2"
@@ -40,7 +40,7 @@
         android:inputType="number" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textViewInfo"
         android:layout_width="274dp"
         android:layout_height="114dp"
         android:layout_alignParentStart="true"

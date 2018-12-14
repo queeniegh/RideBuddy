@@ -3,6 +3,7 @@ package com.example.queenie.ridebuddy;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -11,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.PopupMenu;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -19,11 +22,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import static android.support.constraint.Constraints.TAG;
 
 public class RideConfirmationActivity extends Activity implements View.OnClickListener {
 
-    EditText editTextConfirmnum;
+    TextView textViewInfo, textViewConfirm;
     Button buttonHome;
     private FirebaseAuth mAuth;
 
@@ -34,20 +41,54 @@ public class RideConfirmationActivity extends Activity implements View.OnClickLi
 
         mAuth = FirebaseAuth.getInstance();
 
+        textViewInfo = findViewById(R.id.textViewInfo);
+        textViewConfirm = findViewById(R.id.textViewConfirm);
         buttonHome=findViewById(R.id.buttonHome);
 
         buttonHome.setOnClickListener(this);
-/*
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference myRef = database.getReference("Trips");
 
-        myRef.addValueEventListener(new ValueEventListener() {
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference userRef = database.getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+        userRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                Trips confirmTrip = dataSnapshot.getValue(Trips.class);
-                editTextConfirmnum.setText(confirmTrip.confirmnum);
+                if(dataSnapshot.exists()) {
+                    final User thisUser = dataSnapshot.getValue(User.class);
+                    if (!thisUser.currentRide.isEmpty()) {
+                        DatabaseReference tripRef = database.getReference("Trips").child(thisUser.currentRide);
+                        tripRef.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                if(dataSnapshot.exists()) {
+                                    Trips thisTrip = dataSnapshot.getValue(Trips.class);
+                                    if (thisTrip.confirmnum != 0) {
+                                        DateFormat df = new SimpleDateFormat("hh:mm");
+                                        String start = df.format(new Date(thisTrip.traveltime1));
+                                        String end = df.format(new Date(thisTrip.traveltime2));
+                                        textViewConfirm.setText(thisTrip.confirmnum + "");
+                                        textViewInfo.setText("From " + thisTrip.origin + "(" + start + ") to " + thisTrip.destination + "(" + end + ").\nPlease note down these trip details, you won't be able to see them again!");
+                                        thisUser.currentRide = "";
+                                        userRef.setValue(thisUser);
+                                    } else {
+                                        textViewInfo.setText("No match found yet");
+                                    }
+                                } else {
+                                    Toast.makeText(RideConfirmationActivity.this, "Couldn't find ride", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
+                    } else {
+                        // Not waiting for a ride
+                    }
+                } else {
+                    Toast.makeText(RideConfirmationActivity.this, "Could not find User", Toast.LENGTH_SHORT).show();
+                }
             }
             @Override
             public void onCancelled(DatabaseError error) {
@@ -56,7 +97,6 @@ public class RideConfirmationActivity extends Activity implements View.OnClickLi
             }
         });
 
-*/
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

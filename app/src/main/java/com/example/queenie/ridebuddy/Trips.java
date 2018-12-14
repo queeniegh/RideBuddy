@@ -5,15 +5,15 @@ import java.util.Date;
 
 public class Trips {
 
-    String origin;
-    String destination;
-    String traveldate;
-    String traveltime1;
-    String traveltime2;
-    String user;
-    int confirmnum;
+    public String origin;
+    public String destination;
+    public long traveldate;
+    public long   traveltime1;
+    public long   traveltime2;
+    public String user;
+    public int confirmnum;
 
-    public Trips(String origin, String destination, String traveldate, String traveltime1, String traveltime2, String user, int confirmnum) {
+    public Trips(String origin, String destination, long traveldate, long traveltime1, long traveltime2, String user, int confirmnum) {
         this.origin = origin;
         this.destination = destination;
         this.traveldate = traveldate;
