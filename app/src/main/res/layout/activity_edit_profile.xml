@@ -7,7 +7,7 @@
     tools:context=".EditProfileActivity">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editNumber"
         android:layout_width="wrap_content"
         android:layout_height="38dp"
         android:layout_alignParentStart="true"
@@ -29,42 +29,42 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="39dp"
-        android:layout_marginLeft="39dp"
-        android:layout_marginTop="193dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="316dp"
         android:ems="10"
+        android:hint="Name"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="44dp"
-        tools:text="Name" />
+        tools:layout_editor_absoluteY="44dp" />
 
     <EditText
         android:id="@+id/editBio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/editText"
+        android:layout_alignEnd="@+id/editNumber"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="107dp"
         android:ems="10"
         android:hint="Brief Bio"
         android:inputType="textMultiLine"
-        android:layout_alignRight="@+id/editText"
+        android:layout_alignRight="@+id/editNumber"
         android:layout_marginRight="0dp" />
 
-    <EditText
+    <TextView
         android:id="@+id/editEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editText"
+        android:layout_alignStart="@+id/editNumber"
+        android:layout_alignLeft="@+id/editNumber"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="318dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="211dp"
         android:ems="10"
         android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_marginLeft="0dp" />
+        android:inputType="textEmailAddress" />
 
     <TextView
         android:id="@+id/textView"
@@ -86,8 +86,8 @@
         android:layout_alignTop="@+id/editName"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="-126dp"
-        android:layout_marginEnd="231dp"
-        android:layout_marginRight="231dp"
+        android:layout_marginTop="-237dp"
+        android:layout_marginEnd="236dp"
+        android:layout_marginRight="236dp"
         tools:srcCompat="@tools:sample/avatars" />
 </RelativeLayout>

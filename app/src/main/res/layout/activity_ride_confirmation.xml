@@ -29,7 +29,7 @@
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editTextConfirmnum"
         android:layout_width="119dp"
         android:layout_height="22dp"
         android:layout_alignLeft="@+id/textView2"
@@ -53,7 +53,7 @@
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -61,14 +61,5 @@
         android:layout_marginBottom="159dp"
         android:text="Return Home" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="0dp"
-        android:text="Menu"
-        android:textSize="14sp" />
 </RelativeLayout>
 
