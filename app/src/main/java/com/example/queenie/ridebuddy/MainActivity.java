@@ -15,47 +15,37 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class LoginActivity extends Activity implements View.OnClickListener {
+public class MainActivity extends Activity implements View.OnClickListener {
 
-    Button buttonRegister, buttonLogin;
+    Button buttonCreate, buttonLogin, buttonForgot;
     EditText editTextEmail, editTextPassword;
     private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_main);
 
-        buttonRegister = findViewById(R.id.buttonRegister);
+        buttonCreate = findViewById(R.id.buttonCreate);
         buttonLogin = findViewById(R.id.buttonLogin);
+        buttonForgot = findViewById(R.id.buttonForgot);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
 
         buttonLogin.setOnClickListener(this);
-        buttonRegister.setOnClickListener(this);
+        buttonCreate.setOnClickListener(this);
+        buttonForgot.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
     }
 
     @Override
     public void onClick(View v) {
-        if (v == buttonRegister) {
-            mAuth.createUserWithEmailAndPassword(editTextEmail.getText().toString(), editTextPassword.getText().toString())
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                // Sign in success, update UI with the signed-in user's information
-                                Toast.makeText(LoginActivity.this, "Registration Successful - Welcome!", Toast.LENGTH_SHORT).show();
-                                //Intent intentHome = new Intent(MainActivity.this,HomeActivity.class) ;
-                                //startActivity(intentHome);
-                            } else {
-                                // If sign in fails, display a message to the user.
-                                Toast.makeText(LoginActivity.this, "Registration Failed - Try Again", Toast.LENGTH_SHORT).show();
-                            }
-                            //...
-                        }
-                    });
+        if (v == buttonCreate) {
+
+            Intent intentEdit = new Intent(MainActivity.this, CreateActivity.class);
+            startActivity(intentEdit);
+
         } else if (v == buttonLogin)
 
         {
@@ -66,12 +56,12 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information
                                 FirebaseUser user = mAuth.getCurrentUser();
-                                Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                Intent intentProfile = new Intent(LoginActivity.this, LandingActivity.class);
+                                Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                                Intent intentProfile = new Intent(MainActivity.this, LandingPageActivity.class);
                                 startActivity(intentProfile);
                             } else {
                                 // If sign in fails, display a message to the user.
-                                Toast.makeText(LoginActivity.this, "Access Denied", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Access Denied", Toast.LENGTH_SHORT).show();
                             }
                             // ...
                         }

@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,7 +20,8 @@
         <activity android:name=".LandingPageActivity" />
         <activity android:name=".CreateProfileActivity" />
         <activity android:name=".RideConfirmationActivity" />
-        <activity android:name=".RideStatusActivity"></activity>
+        <activity android:name=".RideStatusActivity" />
+        <activity android:name=".RideRequest"></activity>
     </application>
 
 </manifest>

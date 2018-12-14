@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".CreateProfileActivity">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    // Create Profile Page
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -27,54 +23,50 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="106dp"
         android:ems="10"
-        android:hint="Name"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:text="Name" />
 
     <EditText
         android:id="@+id/editTextEmailTwo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/editTextName"
-        android:layout_alignLeft="@+id/editTextName"
         android:layout_alignParentTop="true"
         android:layout_marginTop="170dp"
         android:ems="10"
-        android:hint="Email"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:text="E-Mail" />
 
     <EditText
         android:id="@+id/editTextPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
         android:ems="10"
-        android:hint="Phone Number"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:text="Phone Number" />
 
     <EditText
         android:id="@+id/editTextPW"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/editTextName"
-        android:layout_alignLeft="@+id/editTextName"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="170dp"
         android:ems="10"
-        android:hint="Password"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:text="Password" />
 
     <EditText
         android:id="@+id/editTextConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/editTextName"
-        android:layout_alignLeft="@+id/editTextName"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="101dp"
         android:ems="10"
-        android:hint="Confirm Password"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:text="Confirm Password" />
 
     <Button
         android:id="@+id/buttonCreateTwo"
@@ -96,9 +88,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="30dp"
-        android:text="Cancel"
-        android:layout_alignRight="@+id/editTextName"
-        android:layout_marginRight="5dp" />
+        android:text="Cancel" />
 
     <Button
         android:id="@+id/buttonBack"
@@ -108,8 +98,5 @@
         android:layout_marginEnd="-94dp"
         android:layout_marginBottom="-55dp"
         android:layout_toStartOf="@+id/buttonCreateTwo"
-        android:text="Back"
-        android:layout_marginRight="-94dp"
-        android:layout_toLeftOf="@+id/buttonCreateTwo" />
+        android:text="Back" />
 </RelativeLayout>
-

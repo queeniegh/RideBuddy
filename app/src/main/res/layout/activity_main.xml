@@ -8,6 +8,7 @@
 
 
     // Login Page
+
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="wrap_content"
@@ -16,20 +17,20 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="165dp"
         android:ems="10"
-        android:inputType="textEmailAddress"
-        android:text="E-Mail" />
+        android:hint="Email Address"
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/editTextEmail"
+        android:layout_alignLeft="@+id/editTextEmail"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="256dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Password"
-        android:layout_alignLeft="@+id/editTextEmail" />
+        android:hint="Password"
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/buttonLogin"
@@ -72,14 +73,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/buttonLogin"
+        android:layout_alignLeft="@+id/buttonLogin"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="-116dp"
-        android:layout_marginTop="86dp"
+        android:layout_marginStart="-114dp"
+        android:layout_marginLeft="-114dp"
+        android:layout_marginTop="73dp"
         android:text="WELCOME TO RIDE BUDDY"
         android:textColor="@color/colorAccent"
         android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_alignLeft="@+id/buttonLogin"
-        android:layout_marginLeft="-116dp" />
+        android:textStyle="bold" />
 
 </RelativeLayout>
