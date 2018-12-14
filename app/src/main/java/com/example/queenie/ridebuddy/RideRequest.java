@@ -72,6 +72,8 @@ public class RideRequest extends Activity implements View.OnClickListener {
 
         if (v == buttonSubmitRide) {
 
+
+
             String createOrigin = editTextOrigin.getText().toString();
             String createDestination = editTextDestination.getText().toString();
             String createTravelTime1 = editTextTimeStart.getText().toString();
@@ -84,10 +86,18 @@ public class RideRequest extends Activity implements View.OnClickListener {
 
             myRef.push().setValue(newTrip);
 
+            myRef.orderByChild("origin").equalTo(createOrigin).orderByChild("destination").equalTo(createDestination).orderByChild("time").equalToaddChildEventListener(new ChildEventListener()
 
-
-            Intent intentConfirm = new Intent(RideRequest.this, RideConfirmationActivity.class);
+                    Intent intentConfirm = new Intent(RideRequest.this, RideConfirmationActivity.class);
             startActivity(intentConfirm);
+
+
+
+
+
+
+
+
         }
     }
 }
