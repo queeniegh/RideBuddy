@@ -12,7 +12,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class EditProfileActivity extends Activity {
 
-    EditText editName, editNumber, editBio;
+    EditText editName, editNum, editBio;
     TextView editEmail;
     private FirebaseAuth mAuth;
 
@@ -23,7 +23,7 @@ public class EditProfileActivity extends Activity {
 
         editBio = findViewById(R.id.editBio);
         editName = findViewById(R.id.editName);
-        editNumber = findViewById(R.id.editNumber);
+        editNum = findViewById(R.id.editNum);
         editEmail = findViewById(R.id.editEmail);
 
         mAuth = FirebaseAuth.getInstance();
