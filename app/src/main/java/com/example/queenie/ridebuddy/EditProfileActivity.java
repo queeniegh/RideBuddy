@@ -23,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class EditProfileActivity extends Activity implements View.OnClickListener {
 
     EditText editTextName, editTextPhone, editTextBio, editTextEmail;
-    Button buttonUpdateName, buttonUpdatePhone, buttonUpdateBio, buttonUpdateEmail;
+    Button buttonUpdateProfile;
     private FirebaseAuth mAuth;
 
     @Override
@@ -36,20 +36,56 @@ public class EditProfileActivity extends Activity implements View.OnClickListene
         editTextPhone = findViewById(R.id.editTextPhone);
         editTextEmail = findViewById(R.id.editTextEmail);
 
-        buttonUpdateName=findViewById(R.id.buttonUpdateName);
-        buttonUpdatePhone=findViewById(R.id.buttonUpdatePhone);
-        buttonUpdateBio=findViewById(R.id.buttonUpdateBio);
-        buttonUpdateEmail=findViewById(R.id.buttonUpdateEmail);
+        buttonUpdateProfile=findViewById(R.id.buttonUpdateProfile);
 
-        buttonUpdateName.setOnClickListener(this);
-        buttonUpdatePhone.setOnClickListener(this);
-        buttonUpdateBio.setOnClickListener(this);
-        buttonUpdateEmail.setOnClickListener(this);
+        buttonUpdateProfile.setOnClickListener(this);
+
 
         mAuth = FirebaseAuth.getInstance();
 
+        getUserObject();
 
     }
+
+    public void getUserObject(){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference myRef = database.getReference("Users");
+
+        String editEmail = mAuth.getCurrentUser().getEmail();
+
+        myRef.orderByChild("email").equalTo(editEmail).addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                User user = dataSnapshot.getValue(User.class);
+                editTextName.setText(user.name);
+                editTextBio.setText(user.bio);
+                editTextPhone.setText(user.phone);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+    }
+
     @Override
     public void onClick(View v) {
 
@@ -57,16 +93,21 @@ public class EditProfileActivity extends Activity implements View.OnClickListene
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference myRef = database.getReference("Users");
 
-        if (v == buttonUpdateName) {
-            String editEmail = editTextEmail.getText().toString();
+        if (v == buttonUpdateProfile) {
+            String editEmail = mAuth.getCurrentUser().getEmail();
             final String editName = editTextName.getText().toString();
-            Toast.makeText(EditProfileActivity.this,"Name Has Been Updated", Toast.LENGTH_SHORT).show();
+            final String editPhone = editTextPhone.getText().toString();
+            final String editBio = editTextBio.getText().toString();
+            //Toast.makeText(EditProfileActivity.this,"Name Has Been Updated", Toast.LENGTH_SHORT).show();
 
             myRef.orderByChild("email").equalTo(editEmail).addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                     String editKey = dataSnapshot.getKey();
-                    myRef.child(editKey).child("name").setValue(editTextName);
+                    myRef.child(editKey).child("name").setValue(editName);
+                    myRef.child(editKey).child("phone").setValue(editPhone);
+                    myRef.child(editKey).child("bio").setValue(editBio);
+                    Toast.makeText(EditProfileActivity.this,"Profile Updated", Toast.LENGTH_SHORT).show();
 
 
                 }
@@ -91,13 +132,6 @@ public class EditProfileActivity extends Activity implements View.OnClickListene
 
                 }
             });
-
-
-        } else  if (v == buttonUpdateEmail){
-
-        }else if (v== buttonUpdatePhone) {
-
-        }else if (v== buttonUpdateBio) {
 
         }
 
