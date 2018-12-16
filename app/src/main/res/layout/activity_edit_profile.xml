@@ -29,8 +29,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="43dp"
-        android:layout_marginLeft="43dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginLeft="42dp"
         android:layout_marginTop="316dp"
         android:ems="10"
         android:hint="Name"
@@ -42,29 +42,17 @@
         android:id="@+id/editBio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/editNumber"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="42dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="382dp"
         android:layout_marginEnd="0dp"
-        android:layout_marginBottom="107dp"
+        android:layout_marginRight="0dp"
         android:ems="10"
         android:hint="Brief Bio"
-        android:inputType="textMultiLine"
-        android:layout_alignRight="@+id/editNumber"
-        android:layout_marginRight="0dp" />
-
-    <TextView
-        android:id="@+id/editEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editNumber"
-        android:layout_alignLeft="@+id/editNumber"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginTop="211dp"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress" />
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/textView"
@@ -79,15 +67,41 @@
         android:text="Edit Your Profile"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="114dp"
-        android:layout_height="95dp"
-        android:layout_alignTop="@+id/editName"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="-237dp"
-        android:layout_marginEnd="236dp"
-        android:layout_marginRight="236dp"
-        tools:srcCompat="@tools:sample/avatars" />
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editNum"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="42dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="213dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="46dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginTop="62dp"
+        tools:src="@tools:sample/avatars[6]" />
+
+    <Button
+        android:id="@+id/buttonUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="124dp"
+        android:layout_marginLeft="124dp"
+        android:layout_marginBottom="27dp"
+        android:text="Update Profile" />
+
 </RelativeLayout>
